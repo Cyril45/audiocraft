@@ -49,7 +49,7 @@ LANCER LE SERVICE
 WINDOWS (PowerShell)
 
 docker run -d --rm --gpus all `
-  -p 8000:8000 `
+  -p 8001:8000 `
   -v ${PWD}\.cache:/app/cache `
   --name audiocraft `
   audiocraft:latest
@@ -57,15 +57,15 @@ docker run -d --rm --gpus all `
 LINUX / WSL
 
 docker run -d --rm --gpus all \
-  -p 8000:8000 \
+  -p 8001:8000 \
   -v $(pwd)/.cache:/app/cache \
   --name audiocraft \
   audiocraft:latest
 
 Une fois lancé :
 
-- API : http://localhost:8000
-- Interface web : http://localhost:8000
+- API : http://localhost:8001
+- Interface web : http://localhost:8001
 
 Le conteneur tourne en tâche de fond.
 
