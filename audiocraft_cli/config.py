@@ -1,0 +1,3 @@
+DEFAULT_SAMPLE_RATE = 32000
+DEFAULT_DURATION = 8
+DEFAULT_MODEL = "facebook/musicgen-small"

@@ -1,0 +1,3 @@
+"""
+AudioCraft CLI package
+"""
