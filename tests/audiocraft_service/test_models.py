@@ -1,4 +1,4 @@
-from audiocraft_cli.models import validate_model_id
+from audiocraft_service.models import validate_model_id
 
 
 def test_validate_model_id_returns_string():

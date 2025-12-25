@@ -1,5 +1,5 @@
 import numpy as np
-from audiocraft_cli.audio import prepare_audio
+from audiocraft_service.audio import prepare_audio
 
 
 def test_prepare_audio_transposes():

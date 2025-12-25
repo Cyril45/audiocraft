@@ -1,5 +1,5 @@
 from unittest.mock import MagicMock, patch
-from audiocraft_cli.engine import MusicGenEngine
+from audiocraft_service.engine import MusicGenEngine
 
 
 @patch("audiocraft_cli.engine.MusicGen")

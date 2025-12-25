@@ -8,7 +8,7 @@ ENV TZ=Etc/UTC
 
 WORKDIR /app
 
-# Dépendances système (FFmpeg + headers DEV)
+# Dépendances système
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3.10 \
     python3.10-dev \
@@ -32,16 +32,17 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Python 3.10 par défaut
 RUN ln -sf /usr/bin/python3.10 /usr/bin/python
 
-# Outils pip
+# Pip
 RUN python -m pip install --upgrade pip setuptools wheel
 
-# Copier le repo local dans l’image
+# Copier le projet
 COPY . .
 
-# Installer les deps (av==12.3.0 désormais)
+# Dépendances Python
 RUN pip install --no-binary=pesq -r requirements.txt
 
-# Installer AudioCraft
+# Installer AudioCraft + ton service
 RUN pip install -e .
 
-ENTRYPOINT ["python", "-m", "audiocraft_cli.cli"]
+# 🚀 Lancer automatiquement l’API + interface web
+CMD ["uvicorn", "audiocraft_service.app:app", "--host", "0.0.0.0", "--port", "8000"]

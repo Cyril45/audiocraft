@@ -1,4 +1,4 @@
-from audiocraft_cli.config import DEFAULT_SAMPLE_RATE
+from audiocraft_service.config import DEFAULT_SAMPLE_RATE
 
 
 def test_default_sample_rate_is_positive():
